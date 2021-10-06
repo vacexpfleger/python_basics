@@ -7,6 +7,7 @@ Každému klíči je přiřazena jedna hodnota.
 
 # Collection which is unordered, changeable and indexed.
 # In Python dictionaries are written with curly brackets, and they have keys and values.
+# V Pythonu se slovníky píšou do složených závorek, ve kterých jsou obsaženy klíče a hodnoty
 car = {
   'brand': 'Ford',
   'model': 'Mustang',
@@ -94,3 +95,40 @@ child3          Linus               2011
 ---------------------------------------------
 Počet záznamů: 3
 '''
+
+albums = {
+  'album1' : {
+    'name' : 'The End of Heartache',
+    'artist' : 'Killswitch Engage',
+    'year' : 2004,
+    'genre' : 'Metalcore',
+    'singles' : {"Rose of Sharyn", "The End of Heartache, A Bid Farewell"},
+    'award' : True
+  },
+  'album2' : {
+    'name' : 'Calculating Infinity',
+    'artist' : 'The Dillinger Escape Plan',
+    'year' : 1999,
+    'genre' : 'Mathcore',
+    'singles' : {"43% Burnt", "Destro's Secret"},
+    'award' : False
+  },
+  'album3': {
+    'name': 'Destroy Erase Improve',
+    'artist': 'Meshuggah',
+    'year': 1995,
+    'genre': 'Djent',
+    'singles': {"Future Breed Machine", "Vanished"},
+    'award': False
+  },
+  'album4': {
+    'name': 'The Great Southern Trendkill',
+    'artist': 'Pantera',
+    'year': 1996,
+    'genre': 'Groove metal',
+    'singles': {"Drag the Waters", "Suicide Note", "Floods"},
+    'award': True
+  }
+}
+
+print(albums.values(), sep="\n")
