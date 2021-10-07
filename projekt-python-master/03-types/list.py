@@ -287,21 +287,28 @@ import random
 import string
 
 print(f'\n*************************************\nCvičení 2\n*************************************')
-hundreds = list(range(0,2001,200))
+hundreds = list(range(200,2001,200))
 print(f"a) {hundreds}\n")
 
 ascii = list(random.choice(string.ascii_uppercase) for i in range(50))
 print(f"b) {ascii}\n")
 
+"""
 del hundreds[0:3]
 del hundreds[-3:]
+"""
+hundreds = hundreds[3:-3]
 print(f"c) {hundreds}\n")
+
 
 unique=[i for i in ascii if ascii.count(i)==1]
 print(f"d) {unique}\n")
 
+"""
 del ascii[len(hundreds)]
 combine = list(zip(hundreds,ascii))
+"""
+combine = list(zip(hundreds,unique))
 print(f"e) {combine}\n")
 
 
@@ -319,12 +326,16 @@ print(f'\n*************************************\nCvičení 3\n******************
 persons.extend([('Vít', 18, 'muž'),('Petr', 50, 'muž'),('Lenka',28,'žena'),('Anna',34,'žena')])
 print(f'a) {persons}\n')
 
+
+"""
 women = [item for item in persons if item[2]=='žena']
 womenNames = list(map(lambda item: item[0], women))
 print(*womenNames, sep="\n-----\n")
+"""
+women = list(filter(lambda item: item[2]=="žena", persons))
+women = [item for item in persons if item[2]=="žena"]
+for item in women: print(f"{item[0]}\n" + "-" * len(item[0]), end="\n")
 
 ipeople = [item for item in persons if item[0].lower().find("i")!=-1]
 ipeople.sort(key=lambda row:row[1], reverse=True)
 [print(str(i)+ ';' + ';'.join(str(x) for x in x), end=';\n') for i, x in enumerate(ipeople)]
-
-

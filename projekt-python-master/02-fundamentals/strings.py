@@ -158,3 +158,6 @@ funkční kód, tím lepší).
 3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
    3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
 '''
+
+datum = "12. 10. 2020"
+print("1. {}-{}-{}".format(datum[7:], datum[4:6], datum[:2]))
