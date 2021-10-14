@@ -13,6 +13,7 @@ print('chars: ', chars)
 print('Type(chars): ',type(chars))
 
 # To create a tuple with only one item, you have add a comma after the item, unless Python will not recognize the variable as a tuple.
+# Pro vytvoření n-tice s jednou hodnotou je potřeba
 colors = ('red',)
 print('colors: ', colors)
 

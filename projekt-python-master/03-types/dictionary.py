@@ -97,7 +97,7 @@ Počet záznamů: 3
 '''
 
 albums = {
-  'album1' : {
+  '1' : {
     'name' : 'The End of Heartache',
     'artist' : 'Killswitch Engage',
     'year' : 2004,
@@ -105,7 +105,7 @@ albums = {
     'singles' : {"Rose of Sharyn", "The End of Heartache, A Bid Farewell"},
     'award' : True
   },
-  'album2' : {
+  '2' : {
     'name' : 'Calculating Infinity',
     'artist' : 'The Dillinger Escape Plan',
     'year' : 1999,
@@ -113,7 +113,7 @@ albums = {
     'singles' : {"43% Burnt", "Destro's Secret"},
     'award' : False
   },
-  'album3': {
+  '3': {
     'name': 'Destroy Erase Improve',
     'artist': 'Meshuggah',
     'year': 1995,
@@ -121,7 +121,7 @@ albums = {
     'singles': {"Future Breed Machine", "Vanished"},
     'award': False
   },
-  'album4': {
+  '4': {
     'name': 'The Great Southern Trendkill',
     'artist': 'Pantera',
     'year': 1996,
@@ -131,4 +131,8 @@ albums = {
   }
 }
 
-print(albums.values(), sep="\n")
+for key, value in albums.items():
+  print("\nAlbum ID:", key)
+
+  for key in value:
+    print(value[key])

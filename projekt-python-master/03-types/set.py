@@ -15,6 +15,7 @@ print(f'Proměnná set_numbers - množina (set): {set_numbers}')
 
 # Vytvoření množiny jedinečných znaků z řetězce
 chars = sorted(list('Hello world'))
+print(f"Uspořádaný seznam hodnot: {chars}")
 set_chars = set(chars)
 print(f'Uspořádaná množina (set) jedinečných hodnot: {set_chars}')
 
