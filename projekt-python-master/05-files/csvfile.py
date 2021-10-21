@@ -1,13 +1,38 @@
 import csv
 
-with open('kniha.csv', 'r', newline='\n') as file:
-    reader = csv.DictReader(file, delimiter=';', quotechar='"')
-    line_count = 0
-    for row in reader:
-        if line_count == 0:
-            print(f'Column names are {", ".join(row)}')
-            line_count += 1
-        else:
-            print(f'\t{row["Kodknihy"]}, {row["Titul"]}, {row["Cena"]}, {row["Typ"]}')
-            line_count += 1
-    print(f'Processed {line_count} lines.')
+
+def csv_read(path, encoding):
+    """Loads CSV file to Python dictionary.
+
+    Keyword arguments:
+    path - path to CSV file
+    encoding - CSV file encoding
+    """
+    try:
+        with(open(path, encoding=encoding)) as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',', quotechar='"')
+            dict_list = [];
+            for row in csv_reader:
+                dict_list.append(row)
+    except FileNotFoundError as error:
+        return f"Not Found {error}"
+    except Exception as error:
+        return f"{error}"
+    finally:
+        csv_file.close()
+    return dict_list
+
+print(csv_read.__doc__)
+print(csv_read("kniha.csv","windows-1250"))
+
+
+"""
+def csv_write(path):
+    try:
+        with open(path, mode="w") as csv_file:
+            fieldnames = ["emp_name", "dept", "birth_month"]
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+            writer.writeheader()
+            writer
+"""
